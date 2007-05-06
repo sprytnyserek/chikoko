@@ -1,0 +1,3 @@
+MODULES = 
+	$(MODULE main.main)
+	$(MODULE lattice.reprezentation)
