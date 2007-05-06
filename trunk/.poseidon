@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<projectDescription>
+	<name>chikoko</name>
+	<exeName>chikoko</exeName>
+	<comment />
+	<filter>*.d</filter>
+	<showemptyfolder>0</showemptyfolder>
+	<zipPath />
+	<buildSpec>
+		<buildOption />
+		<buildType>0</buildType>
+		<CompilerOption>1065104</CompilerOption>
+		<CompilerExtraOption />
+		<LibOption>0 0 0 0 16</LibOption>
+		<mainFile>main.d</mainFile>
+		<Args />
+		<objPathName>objs</objPathName>
+		<projectFiles>
+			<name>M:\D\chikoko\candydoc\modules.ddoc</name>
+			<name>M:\D\chikoko\candydoc\candy.ddoc</name>
+			<name>M:\D\chikoko\main.d</name>
+			<name>M:\D\chikoko\lattice\reprezentation.d</name>
+		</projectFiles>
+		<includePaths />
+		<linkLibrarys />
+		<ignoreModules />
+	</buildSpec>
+</projectDescription>
