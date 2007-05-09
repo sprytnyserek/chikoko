@@ -27,8 +27,10 @@ module main;
 
 import std.stdio;
 import lattice.reprezentation;
+//import gui.mainwindow;
 
 int main(char[][] args) {
 writefln("Hello:[");
+//gui.mainwindow.show();
 return 0;
 }
