@@ -31,11 +31,21 @@ module lattice.reprezentation;
 
 import std.c.stdlib;
 
+/**
+ * Klasa macierzy kwadratowych o współczynnikach całkowitych
+ *
+ * Wspiera operacje macierzowe konieczne do reprezentacji całkowitych 
+ * form kwadratowych, z zachowaniem całkowitoliczbowego charakteru struktury.
+ */
 class SqIntMatrix {
 	protected:
 		uint n;
 		long** array;
 	public:
+		/**
+		 * Params:
+		 *  n = wymiar macierzy kwadratowej
+		 */
 		this(uint n) {
 		this.array = cast(long**)calloc(n,(long*).sizeof);
 		for (uint i = 0; i < n; i++) this.array[i] = cast(long*)calloc(n,long.sizeof);
@@ -46,11 +56,43 @@ class SqIntMatrix {
 		for (uint i = 0; i < this.n; i++) free(this.array[i]);
 		free(this.array);
 		}
+
+		/**
+		 * Stosując kryterium Sylvestera, sprawdza typ formy kwadratowej 
+		 * reprezentowanej przez macierz ze względu na dodatnią określoność.
+		 *
+		 * $(B Uwaga!) Jeżeli forma jest dodatnio określona (odpowiednio:
+		 * nieujemnie określona), to jest słabo dodatnia (odpowiednio: słabo nieujemna). 
+		 * Twierdzenie odwrotne $(B NIE) jest prawdziwe.
+		 * 
+		 * Returns:
+		 *  0 - forma nieokreślona, 1 - forma nieujemnie określona, 2 - forma dodatnio określona
+		 */
+		byte getSylvesterType() {
 		
-		long det() {
-		long x;
-		
-		return x;
+		return 0;
 		}
 		
+	}
+
+/**
+ * Klasa grafów skierowanych z wagami
+ *
+ * Wierzchołki grafu skierowanego są indeksowane liczbami naturalnymi 
+ * w celu zachowania zgodności z definicją grafu formy kwadratowej.
+ */
+class Quiver {
+	
+	}
+
+/**
+ * Klasa zbiorów częściowo uporządkowanych
+ *
+ * Połączenie cech grafu skierowanego i drzewa. Wierzchołki są indeksowane 
+ * liczbami całkowitymi bez znaku w taki sposób, aby elementy największe 
+ * miały największe indeksy, oraz aby dla każdej pary elementów porównywalnych 
+ * element mniejszy miał mniejszą wartość indeksu.
+ */
+class Poset : Quiver {
+	
 	}
