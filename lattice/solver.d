@@ -17,26 +17,14 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 /**
- * Moduł główny
+ * Funkcje rozwiązujące równania z formami kwadratowymi różnymi metodami.
  *
  * Authors: Tomasz Polachowski, $(LINK2 mailto:sprytnyserek@gmail.com,sprytnyserek@gmail.com)
  * License: GNU General Public License 2.0, $(LINK http://www.fsf.org/licensing/licenses/gpl.html)
  * Version: 0.0.1
-*/
-module main;
-
-import std.stdio;
-
-import lattice.reprezentation;
-//import gui.mainwindow;
-
-/**
- * Funkcja główna
- *
- * Wywołanie programu&#58; $(B chikoko [-f nazwa_pliku])
  */
-int main(char[][] args) {
-writefln("Hello:[");
-//gui.mainwindow.show();
-return 0;
-}
+module lattice.solver;
+
+private import lattice.reprezentation;
+
+

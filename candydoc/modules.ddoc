@@ -1,4 +1,5 @@
 MODULES = 
 	$(MODULE main.main)
 	$(MODULE lattice.reprezentation)
+	$(MODULE lattice.solver)
 	
