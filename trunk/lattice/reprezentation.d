@@ -80,8 +80,21 @@ class SqIntMatrix {
  *
  * Wierzchołki grafu skierowanego są indeksowane liczbami naturalnymi 
  * w celu zachowania zgodności z definicją grafu formy kwadratowej.
+ *
+ * Każda waga domyślnie jest równa 1. Inne wartości wagi wyznaczają mnożnik 
+ * dla dwumianu określanego przez daną krawędź.
  */
 class Quiver {
+	protected:
+	
+	public:
+	this() {
+
+	}
+
+	~this() {
+
+	}
 	
 	}
 
