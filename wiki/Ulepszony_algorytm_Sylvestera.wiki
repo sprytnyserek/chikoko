@@ -8,6 +8,5 @@ Algorytm Sylvestera, oparty na analogicznym twierdzeniu zwanym "kryterium Sylves
 Liczba _p_,,k,, wykonywanych mnożeń przy obliczaniu wyznaczników wprost z definicji (z rozwinięć Laplace'a) jest określona przez wzór rekurencyjny _p_,,1,, = 0, _p_,,k+1,, = (_k_+1)_p_,,k,,+_k_+1, gdzie _k_ jest wymiarem sprawdzanego minora. Zauważmy, że każdy wyraz tego ciągu powstaje m. in. przez pomnożenie wyrazu poprzedniego przez pewien liniowy czynnik zależny liniowo od _k_ taki, że gdy _k_ dąży do nieskończoności, to ten czynnik również dąży do nieskończoności. Stąd można wywnioskować, że obliczanie wyznacznika metodą Laplace'a działa w czasie _O_(_k_!). Jeżeli macierz jest wymiaru _n_, to liczba wykonywanych mnożeń w algorytmie Sylvestera jest równa dokładnie sumie _p_,,1,,+_p_,,2,,+...+_p_,,n,,. Taka złożoność czasowa jest nieakceptowalna. Wobec tego należy dążyć do uzyskania algorytmu o lepszej złożności czasowej, korzystając z własności wyznacznika macierzy.
 
 
-= Zmodyfikowana eliminacja Gaussa =
-
+= Zmodyfikowana eliminacja Gaussa (diagonalizacja symetryczna) =
 
