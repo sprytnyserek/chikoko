@@ -9,8 +9,8 @@
 	<buildSpec>
 		<buildOption />
 		<buildType>0</buildType>
-		<CompilerOption>1065104</CompilerOption>
-		<CompilerExtraOption />
+		<CompilerOption>1081488</CompilerOption>
+		<CompilerExtraOption>-version=gui</CompilerExtraOption>
 		<LibOption>0 0 0 0 16</LibOption>
 		<mainFile>main.d</mainFile>
 		<Args />
@@ -18,14 +18,16 @@
 		<projectFiles>
 			<name>M:\D\chikoko\candydoc\candy.ddoc</name>
 			<name>M:\D\chikoko\candydoc\modules.ddoc</name>
+			<name>M:\D\chikoko\gui\winmain.d</name>
 			<name>M:\D\chikoko\lattice\reprezentation.d</name>
-			<name>M:\D\chikoko\main.d</name>
 			<name>M:\D\chikoko\lattice\solver.d</name>
+			<name>M:\D\chikoko\main.d</name>
 		</projectFiles>
 		<includePaths />
 		<linkLibrarys>
 			<name>M:\D\chikoko\candydoc\candy.ddoc</name>
 			<name>M:\D\chikoko\candydoc\modules.ddoc</name>
+			<name>C:\dmd\lib\dfl.lib</name>
 		</linkLibrarys>
 		<ignoreModules />
 	</buildSpec>

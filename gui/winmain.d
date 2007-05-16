@@ -17,27 +17,56 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 /**
- * Moduł główny
+ * Główne klasy obsługi graficznego interfejsu użytkownika.
  *
  * Authors: Tomasz Polachowski, $(LINK2 mailto:sprytnyserek@gmail.com,sprytnyserek@gmail.com)
  * License: GNU General Public License 2.0, $(LINK http://www.fsf.org/licensing/licenses/gpl.html)
  * Version: 0.0.1
-*/
-module main;
+ */
+module gui.winmain;
 
-import std.stdio;
-
-import lattice.reprezentation;
-import gui.winmain;
-import dfl.all;
+private import dfl.all;
 
 /**
- * Funkcja główna
+ * Klasa głównego okna aplikacji
  *
- * Wywołanie programu&#58; $(B chikoko [-f nazwa_pliku])
+ * Tu znajduje się punkt wejścia do pozostałych funkcji programu 
+ * z perspektywy użytkownika.
  */
-int main(char[][] args) {
-//writefln("Hello:[");
-Application.run(new MainWindow);
-return 0;
-}
+class MainWindow : Form {
+	private:
+	Label title;
+	char[] text;
+
+	void createWidgets() {
+	this.title = new Label;
+	this.title.font = new Font("Verdana",14f);
+	this.title.text = "Hello, Chikoko World!";
+	this.title.location = Point(15,15);
+	this.title.autoSize = true;
+	this.title.dock = DockStyle.NONE;
+	this.title.parent = this;
+	}
+	
+	public:
+	/**
+	 * Params:
+	 *  title = tytuł głównego okna programu
+	 */
+	this(char[] title = "Chikoko") {
+	super();
+	this.text = title;
+	this.createWidgets();
+	}
+
+	/**
+	 * Ustawia tytuł głównego okna programu.
+	 *
+	 * Params:
+	 *  title = tytuł głównego okna programu
+	 */
+	void setTitle(char[] title = "Chikoko") {
+	this.text = title;
+	}
+	
+	}
