@@ -1,5 +1,5 @@
 ﻿/*
-chikoko - quadratic forms solving
+chikoko - easy calculation
 Copyright (C) 2007 Tomasz Polachowski, sprytnyserek@gmail.com
 
 This program is free software; you can redistribute it and/or
@@ -35,38 +35,51 @@ private import dfl.all;
  */
 class MainWindow : Form {
 	private:
-	Label title;
-	char[] text;
-
-	void createWidgets() {
-	this.title = new Label;
-	this.title.font = new Font("Verdana",14f);
-	this.title.text = "Hello, Chikoko World!";
-	this.title.location = Point(15,15);
-	this.title.autoSize = true;
-	this.title.dock = DockStyle.NONE;
-	this.title.parent = this;
-	}
+	Label statusBar;
+	TreeView nav;//structure navigator
+	MenuItem mpop,mi;
 	
 	public:
 	/**
-	 * Params:
-	 *  title = tytuł głównego okna programu
+	 * 
 	 */
-	this(char[] title = "Chikoko") {
+	this() {
 	super();
-	this.text = title;
-	this.createWidgets();
-	}
+	
+	with (this) {
+		startPosition = FormStartPosition.WINDOWS_DEFAULT_LOCATION;
+		size = Size(640,480);
+		text = "Chikoko";
+		icon = Application.resources.getIcon(103);
+		}
+		
+	with (this.statusBar = new Label) {
+		autoSize(true);
+		dock(DockStyle.BOTTOM);
+		borderStyle(BorderStyle.FIXED_3D);
+		text = "Ready";
+		parent = this;
+		}
+		
+	with (this.nav = new TreeView) {
+		size = Size(160,480);
+		//dock(DockStyle.LEFT);
+		borderStyle(BorderStyle.FIXED_3D);
+		parent = this;
+		}
 
-	/**
-	 * Ustawia tytuł głównego okna programu.
-	 *
-	 * Params:
-	 *  title = tytuł głównego okna programu
-	 */
-	void setTitle(char[] title = "Chikoko") {
-	this.text = title;
-	}
+	this.menu = new MainMenu;
+	with (mpop = new MenuItem) {
+		text = "&File";
+		index = 0;
+		this.menu.menuItems.add(mpop);
+		}
+	with (mi = new MenuItem){
+		text = "&New\tCtrl+N";
+		index = 0;
+		mpop.menuItems.add(mi);
+		}
+	
+	}//end this()
 	
 	}

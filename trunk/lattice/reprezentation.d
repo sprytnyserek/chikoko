@@ -1,5 +1,5 @@
 ﻿/*
-chikoko - quadratic forms solving
+chikoko - easy calculation
 Copyright (C) 2007 Tomasz Polachowski, sprytnyserek@gmail.com
 
 This program is free software; you can redistribute it and/or

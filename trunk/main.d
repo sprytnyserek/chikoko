@@ -1,5 +1,5 @@
 ﻿/*
-chikoko - quadratic forms solving
+chikoko - easy calculation
 Copyright (C) 2007 Tomasz Polachowski, sprytnyserek@gmail.com
 
 This program is free software; you can redistribute it and/or
@@ -38,6 +38,12 @@ import dfl.all;
  */
 int main(char[][] args) {
 //writefln("Hello:[");
-Application.run(new MainWindow);
+try {
+	Application.run(new MainWindow());
+	}
+catch (Exception ex) {
+	msgBox(ex.msg,"Błąd",MsgBoxButtons.OK,MsgBoxIcon.ERROR);
+	return 1;
+	}
 return 0;
 }
