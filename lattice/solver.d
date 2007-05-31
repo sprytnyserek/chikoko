@@ -1,5 +1,5 @@
 ﻿/*
-chikoko - quadratic forms solving
+chikoko - easy calculation
 Copyright (C) 2007 Tomasz Polachowski, sprytnyserek@gmail.com
 
 This program is free software; you can redistribute it and/or
@@ -76,5 +76,11 @@ for (i = 0; i < n; i++) {
 		
 		}
 	}
+return r;
+}
+
+byte getDynkinType(float[][] bq) {
+byte r = 0;
+
 return r;
 }
