@@ -19,7 +19,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 /**
  * Główne klasy obsługi graficznego interfejsu użytkownika.
  *
- * Authors: Tomasz Polachowski, $(LINK2 mailto:sprytnyserek@gmail.com,sprytnyserek@gmail.com)
+ * Author: Tomasz Polachowski, $(LINK2 mailto:sprytnyserek@gmail.com,sprytnyserek@gmail.com)
  * License: GNU General Public License 2.0, $(LINK http://www.fsf.org/licensing/licenses/gpl.html)
  * Version: 0.0.1
  */
@@ -62,8 +62,10 @@ class MainWindow : Form {
 		}
 		
 	with (this.nav = new TreeView) {
-		size = Size(160,480);
-		//dock(DockStyle.LEFT);
+		//size = Size(160,640);
+		dock(DockStyle.LEFT);
+		width = this.clientSize.width / 3;
+		bounds = Rect(0,0,width,this.clientSize.height);
 		borderStyle(BorderStyle.FIXED_3D);
 		parent = this;
 		}
@@ -74,12 +76,27 @@ class MainWindow : Form {
 		index = 0;
 		this.menu.menuItems.add(mpop);
 		}
-	with (mi = new MenuItem){
+	with (mi = new MenuItem) {
 		text = "&New\tCtrl+N";
 		index = 0;
 		mpop.menuItems.add(mi);
 		}
+	with (mi = new MenuItem) {
+		text = "-";
+		index = 1;
+		mpop.menuItems.add(mi);
+		}
+	with (mi = new MenuItem) {
+		text = "Exit\tAlt+F4";
+		index = 2;
+		click ~= &fileExitMenu_click;
+		mpop.menuItems.add(mi);
+		}
 	
 	}//end this()
+
+	private void fileExitMenu_click(Object sender,EventArgs ea) {
+	Application.exitThread();
+	}
 	
 	}

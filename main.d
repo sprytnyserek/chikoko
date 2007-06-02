@@ -19,7 +19,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 /**
  * Moduł główny
  *
- * Authors: Tomasz Polachowski, $(LINK2 mailto:sprytnyserek@gmail.com,sprytnyserek@gmail.com)
+ * Author: Tomasz Polachowski, $(LINK2 mailto:sprytnyserek@gmail.com,sprytnyserek@gmail.com)
  * License: GNU General Public License 2.0, $(LINK http://www.fsf.org/licensing/licenses/gpl.html)
  * Version: 0.0.1
 */
@@ -31,6 +31,8 @@ import lattice.reprezentation;
 import gui.winmain;
 import dfl.all;
 
+static const int SUCCESS = 0, FAILURE = 1;
+
 /**
  * Funkcja główna
  *
@@ -39,11 +41,11 @@ import dfl.all;
 int main(char[][] args) {
 //writefln("Hello:[");
 try {
-	Application.run(new MainWindow());
+	Application.run(new MainWindow);
 	}
 catch (Exception ex) {
 	msgBox(ex.msg,"Błąd",MsgBoxButtons.OK,MsgBoxIcon.ERROR);
-	return 1;
+	return FAILURE;
 	}
-return 0;
+return SUCCESS;
 }
