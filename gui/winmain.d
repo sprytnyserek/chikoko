@@ -38,6 +38,7 @@ class MainWindow : Form {
 	Label statusBar;
 	TreeView nav;//structure navigator
 	MenuItem mpop,mi;
+	Panel taskbar;
 	
 	public:
 	/**
@@ -60,6 +61,8 @@ class MainWindow : Form {
 		text = "Ready";
 		parent = this;
 		}
+
+	createTaskbar();
 		
 	with (this.nav = new TreeView) {
 		//size = Size(160,640);
@@ -67,6 +70,8 @@ class MainWindow : Form {
 		width = this.clientSize.width / 3;
 		bounds = Rect(0,0,width,this.clientSize.height);
 		borderStyle(BorderStyle.FIXED_3D);
+		vScroll = true;
+		hScroll = true;
 		parent = this;
 		}
 
@@ -79,23 +84,156 @@ class MainWindow : Form {
 	with (mi = new MenuItem) {
 		text = "&New\tCtrl+N";
 		index = 0;
+		click ~= &fileNewMenu_click;
+		mpop.menuItems.add(mi);
+		}
+	with (mi = new MenuItem) {
+		text = "&Open\tCtrl+O";
+		index = 1;
+		click ~= &fileOpenMenu_click;
+		mpop.menuItems.add(mi);
+		}
+	with (mi = new MenuItem) {
+		text = "&Close\tCtrl+F4";
+		index = 2;
+		click ~= &fileCloseMenu_click;
+		mpop.menuItems.add(mi);
+		}
+	with (mi = new MenuItem) {
+		text = "&Save\tCtrl+S";
+		index = 3;
+		click ~= &fileSaveMenu_click;
+		mpop.menuItems.add(mi);
+		}
+	with (mi = new MenuItem) {
+		text = "Save &as...\tF12";
+		index = 4;
+		click ~= &fileSaveAsMenu_click;
 		mpop.menuItems.add(mi);
 		}
 	with (mi = new MenuItem) {
 		text = "-";
+		index = 5;
+		mpop.menuItems.add(mi);
+		}
+	with (mi = new MenuItem) {
+		text = "&Exit\tAlt+F4";
+		index = 6;
+		click ~= &fileExitMenu_click;
+		mpop.menuItems.add(mi);
+		}
+
+	with (mpop = new MenuItem) {
+		text = "&Edit";
+		index = 1;
+		menu.menuItems.add(mpop);
+		}
+	with (mi = new MenuItem) {
+		text = "Cu&t\tCrtl+X";
+		index = 0;
+		mpop.menuItems.add(mi);
+		}
+	with (mi = new MenuItem) {
+		text = "&Copy\tCtrl+C";
 		index = 1;
 		mpop.menuItems.add(mi);
 		}
 	with (mi = new MenuItem) {
-		text = "Exit\tAlt+F4";
+		text = "&Past\tCtrl+V";
 		index = 2;
-		click ~= &fileExitMenu_click;
 		mpop.menuItems.add(mi);
+		}
+	with (mi = new MenuItem) {
+		text = "-";
+		index = 3;
+		mpop.menuItems.add(mi);
+		}
+	with (mi = new MenuItem) {
+		text = "&Select all\tCtrl+A";
+		index = 4;
+		mpop.menuItems.add(mi);
+		}
+	with (mi = new MenuItem) {
+		text = "-";
+		index = 5;
+		mpop.menuItems.add(mi);
+		}
+	with (mi = new MenuItem) {
+		text = "&Dodaj obiekt...\tIns";
+		index = 6;
+		mpop.menuItems.add(mi);
+		}
+	with (mi = new MenuItem) {
+		text = "&Usuń obiekt\tDel";
+		index = 7;
+		mpop.menuItems.add(mi);
+		}
+
+	with (mpop = new MenuItem) {
+		text = "&View";
+		index = 2;
+		menu.menuItems.add(mpop);
 		}
 	
 	}//end this()
 
-	private void fileExitMenu_click(Object sender,EventArgs ea) {
+	private:
+	void createTaskbar() {
+	Button button;
+	
+	with (taskbar = new Panel) {
+		dock = DockStyle.TOP;
+		height = 36;
+		parent = this;
+		}
+	with (button = new Button) {
+		size = Size(36,36);
+		location = Point(0,0);
+		image = Application.resources.getIcon(116);
+		parent = taskbar;
+		}
+	with (button = new Button) {
+		size = Size(36,36);
+		location = Point(35,0);
+		image = Application.resources.getIcon(109);
+		parent = taskbar;
+		}
+	with (button = new Button) {
+		size = Size(36,36);
+		location = Point(71,0);
+		image = Application.resources.getIcon(113);
+		parent = taskbar;
+		}
+	with (button = new Button) {
+		size = Size(36,36);
+		location = Point(107,0);
+		image = Application.resources.getIcon(115);
+		parent = taskbar;
+		}
+	
+	} // end createTaskbar
+	
+	void fileNewMenu_click(Object sender,EventArgs ea) {
+	
+	}
+
+	void fileOpenMenu_click(Object sender,EventArgs ea) {
+
+	}
+
+	void fileCloseMenu_click(Object sender,EventArgs ea) {
+
+	}
+
+	void fileSaveMenu_click(Object sender,EventArgs ea) {
+
+	}
+
+	void fileSaveAsMenu_click(Object sender,EventArgs ea) {
+
+	}
+
+	void fileExitMenu_click(Object sender,EventArgs ea) {
 	Application.exitThread();
 	}
 	

@@ -22,6 +22,8 @@
 			<name>M:\D\chikoko\lattice\reprezentation.d</name>
 			<name>M:\D\chikoko\lattice\solver.d</name>
 			<name>M:\D\chikoko\main.d</name>
+			<name>M:\D\chikoko\matrix\matrix.d</name>
+			<name>M:\D\chikoko\structexception.d</name>
 		</projectFiles>
 		<includePaths />
 		<linkLibrarys>
