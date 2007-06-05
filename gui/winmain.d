@@ -159,12 +159,12 @@ class MainWindow : Form {
 		mpop.menuItems.add(mi);
 		}
 	with (mi = new MenuItem) {
-		text = "&Dodaj obiekt...\tIns";
+		text = "&Add object...\tIns";
 		index = 6;
 		mpop.menuItems.add(mi);
 		}
 	with (mi = new MenuItem) {
-		text = "&Usuń obiekt\tDel";
+		text = "&Drop object\tDel";
 		index = 7;
 		mpop.menuItems.add(mi);
 		}
